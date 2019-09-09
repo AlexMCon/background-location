@@ -1,0 +1,27 @@
+<ActionBar class="action-bar">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label class="action-bar-title" text="Login Page"></Label>
+</ActionBar>
+
+<GridLayout class="page page-content">
+    <ScrollView class="page">
+        <StackLayout class="home-panel">
+            <TextField [(ngModel)]="Username" hint="Username" required type="email" marginBottom="10"></TextField>
+            <TextField [(ngModel)]="Password" secure="true" hint="Password" marginBottom="15"></TextField>
+            <Button text="Login" (tap)="sendLogin()" marginBottom="30"></Button>
+            <StackLayout orientation="horizontal" horizontalAlignment="right">
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</GridLayout>

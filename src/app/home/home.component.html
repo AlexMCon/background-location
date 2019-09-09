@@ -1,0 +1,32 @@
+<ActionBar class="action-bar">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label class="action-bar-title" text="Hoassdasdme"></Label>
+</ActionBar>
+
+<GridLayout class="page page-content">
+    <ScrollView sdkExampleTitle sdkToggleNavButton>
+        <FlexboxLayout flexDirection="column-reverse">
+            <Image [src]="imageTaken" flexGrow="3" class="p-15 img-rounded"></Image>
+            <Button text="Take Photo" class="btn btn-primary btn-active" (tap)="_onTakePhoto()" flexGrow="1"></Button>
+            
+            <Button [text]="checkLocationTracking() ? 'Start location monitoring' : 'Stop location monitoring'" class="btn btn-primary btn-active" (tap)="_onGeolocationService()" flexGrow="1"></Button>
+            
+            <Button text="Check Location" class="btn btn-primary btn-active" (tap)="checkLoc()" flexGrow="1"></Button>
+        
+            <Button text="Get Posts" class="btn btn-primary btn-active" (tap)="getPosts()" flexGrow="1"></Button>
+
+        </FlexboxLayout>
+    </ScrollView>
+</GridLayout>

@@ -1,0 +1,11 @@
+/* Add mobile styles for the component here.  */
+.home-panel{
+    vertical-align: middle;
+    font-size: 20;
+    margin: 15;
+    padding-bottom: 15vh;
+}
+
+.description-label{
+    margin-bottom: 15;
+}
